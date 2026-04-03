@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atelier de Înfrumusețare by Carmen Dinu</title>
+  <link rel="stylesheet" href="style.css" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="index.html" class="logo">ACD.</a>
+    </div>
+    <div class="nav-center">
+      <a href="demo.html" class="nav-icon"><i class="fa-regular fa-image"></i> GALERIE</a>
+      <a href="https://instagram.com/pune_link_aici" target="_blank" class="nav-icon"><i class="fa-brands fa-instagram"></i> INSTAGRAM</a>
+      <a href="https://mero.ro/pune_link_aici" target="_blank" class="nav-icon"><i class="fa-regular fa-calendar-check"></i> MERO</a>
+      <a href="tel:+40700000000" class="nav-icon"><i class="fa-solid fa-phone"></i> APELEAZĂ-NE</a>
+    </div>
+    <div class="nav-right">
+      <button class="btn-minimal" id="openCartBtn">
+        SELECȚIA TA (<span id="cartCount">0</span>)
+      </button>
+    </div>
+  </nav>
+
+  <header class="hero scroll-appear">
+    <div class="hero-content">
+      <h1 class="hero-title">Atelier de Înfrumusețare</h1>
+      <h2 class="hero-subtitle">by Carmen Dinu</h2>
+      <a href="#servicii" class="btn-solid-gold hero-btn">PROGRAMEAZĂ ACUM</a>
+    </div>
+  </header>
+
+  <section class="services-menu" id="servicii">
+    <div class="menu-header scroll-appear">
+      <span class="eyebrow">Expertiza Noastră</span>
+      <h2 class="section-title">Ritualuri de Înfrumusețare</h2>
+    </div>
+
+    <div class="menu-list" id="servicesContainer">
+
+      <div class="service-block scroll-appear">
+        <div class="service-header">
+          <h3>Estetica Unghiilor</h3>
+          <p>Manichiură executată impecabil, cu atenție la detaliile cuticulei și arhitectura unghiei.</p>
+        </div>
+        <div class="variants-container">
+          <div class="variant-row">
+            <div class="variant-info"><span>Manichiură Clasică</span><span class="variant-price">70 RON</span></div>
+            <div class="variant-actions">
+              <div class="qty-selector"><button class="qty-btn" onclick="updateQty('nail-clasic', -1)">-</button><span id="qty-nail-clasic">1</span><button class="qty-btn" onclick="updateQty('nail-clasic', 1)">+</button></div>
+              <button class="btn-add" onclick="addToCart('nail-clasic', 'Manichiură Clasică', 70)">ADAUGĂ</button>
+            </div>
+          </div>
+          <div class="variant-row">
+            <div class="variant-info"><span>Manichiură Semipermanentă</span><span class="variant-price">120 RON</span></div>
+            <div class="variant-actions">
+              <div class="qty-selector"><button class="qty-btn" onclick="updateQty('nail-semi', -1)">-</button><span id="qty-nail-semi">1</span><button class="qty-btn" onclick="updateQty('nail-semi', 1)">+</button></div>
+              <button class="btn-add" onclick="addToCart('nail-semi', 'Manichiură Semipermanentă', 120)">ADAUGĂ</button>
+            </div>
+          </div>
+          <div class="variant-row">
+            <div class="variant-info"><span>Manichiură Hibrid/Gel</span><span class="variant-price">170 RON</span></div>
+            <div class="variant-actions">
+              <div class="qty-selector"><button class="qty-btn" onclick="updateQty('nail-gel', -1)">-</button><span id="qty-nail-gel">1</span><button class="qty-btn" onclick="updateQty('nail-gel', 1)">+</button></div>
+              <button class="btn-add" onclick="addToCart('nail-gel', 'Manichiură Hibrid/Gel', 170)">ADAUGĂ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block scroll-appear">
+        <div class="service-header">
+          <h3>Coafură & Styling</h3>
+          <p>Spălat, tratament și coafat adaptat fizionomiei și texturii firului tău de păr.</p>
+        </div>
+        <div class="variants-container">
+          <div class="variant-row">
+            <div class="variant-info"><span>Spălat & Coafat - Păr Scurt</span><span class="variant-price">100 RON</span></div>
+            <div class="variant-actions">
+              <div class="qty-selector"><button class="qty-btn" onclick="updateQty('hair-short', -1)">-</button><span id="qty-hair-short">1</span><button class="qty-btn" onclick="updateQty('hair-short', 1)">+</button></div>
+              <button class="btn-add" onclick="addToCart('hair-short', 'Coafat Păr Scurt', 100)">ADAUGĂ</button>
+            </div>
+          </div>
+          <div class="variant-row">
+            <div class="variant-info"><span>Spălat & Coafat - Păr Mediu</span><span class="variant-price">150 RON</span></div>
+            <div class="variant-actions">
+              <div class="qty-selector"><button class="qty-btn" onclick="updateQty('hair-med', -1)">-</button><span id="qty-hair-med">1</span><button class="qty-btn" onclick="updateQty('hair-med', 1)">+</button></div>
+              <button class="btn-add" onclick="addToCart('hair-med', 'Coafat Păr Mediu', 150)">ADAUGĂ</button>
+            </div>
+          </div>
+          <div class="variant-row">
+            <div class="variant-info"><span>Spălat & Coafat - Păr Lung</span><span class="variant-price">200 RON</span></div>
+            <div class="variant-actions">
+              <div class="qty-selector"><button class="qty-btn" onclick="updateQty('hair-long', -1)">-</button><span id="qty-hair-long">1</span><button class="qty-btn" onclick="updateQty('hair-long', 1)">+</button></div>
+              <button class="btn-add" onclick="addToCart('hair-long', 'Coafat Păr Lung', 200)">ADAUGĂ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block scroll-appear">
+        <div class="service-header">
+          <h3>Gene & Sprâncene</h3>
+          <p>Arhitectura privirii tale prin tehnici precise de conturare și curățare.</p>
+        </div>
+        <div class="variants-container">
+          <div class="variant-row">
+            <div class="variant-info"><span>Pensat Curățare</span><span class="variant-price">50 RON</span></div>
+            <div class="variant-actions">
+              <div class="qty-selector"><button class="qty-btn" onclick="updateQty('brows-clean', -1)">-</button><span id="qty-brows-clean">1</span><button class="qty-btn" onclick="updateQty('brows-clean', 1)">+</button></div>
+              <button class="btn-add" onclick="addToCart('brows-clean', 'Pensat Curățare', 50)">ADAUGĂ</button>
+            </div>
+          </div>
+          <div class="variant-row">
+            <div class="variant-info"><span>Stilizare & Vopsit</span><span class="variant-price">80 RON</span></div>
+            <div class="variant-actions">
+              <div class="qty-selector"><button class="qty-btn" onclick="updateQty('brows-style', -1)">-</button><span id="qty-brows-style">1</span><button class="qty-btn" onclick="updateQty('brows-style', 1)">+</button></div>
+              <button class="btn-add" onclick="addToCart('brows-style', 'Stilizare & Vopsit', 80)">ADAUGĂ</button>
+            </div>
+          </div>
+          <div class="variant-row">
+            <div class="variant-info"><span>Laminare Sprâncene / Gene</span><span class="variant-price">150 RON</span></div>
+            <div class="variant-actions">
+              <div class="qty-selector"><button class="qty-btn" onclick="updateQty('brows-lam', -1)">-</button><span id="qty-brows-lam">1</span><button class="qty-btn" onclick="updateQty('brows-lam', 1)">+</button></div>
+              <button class="btn-add" onclick="addToCart('brows-lam', 'Laminare', 150)">ADAUGĂ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-block scroll-appear">
+        <div class="service-header">
+          <h3>Machiaj Profesional</h3>
+          <p>Tehnici de conturare fină și produse premium pentru un ten impecabil.</p>
+        </div>
+        <div class="variants-container">
+          <div class="variant-row">
+            <div class="variant-info"><span>Machiaj de Zi (Nude/Glow)</span><span class="variant-price">200 RON</span></div>
+            <div class="variant-actions">
+              <div class="qty-selector"><button class="qty-btn" onclick="updateQty('mua-day', -1)">-</button><span id="qty-mua-day">1</span><button class="qty-btn" onclick="updateQty('mua-day', 1)">+</button></div>
+              <button class="btn-add" onclick="addToCart('mua-day', 'Machiaj de Zi', 200)">ADAUGĂ</button>
+            </div>
+          </div>
+          <div class="variant-row">
+            <div class="variant-info"><span>Machiaj de Seară (Glam)</span><span class="variant-price">300 RON</span></div>
+            <div class="variant-actions">
+              <div class="qty-selector"><button class="qty-btn" onclick="updateQty('mua-eve', -1)">-</button><span id="qty-mua-eve">1</span><button class="qty-btn" onclick="updateQty('mua-eve', 1)">+</button></div>
+              <button class="btn-add" onclick="addToCart('mua-eve', 'Machiaj de Seară', 300)">ADAUGĂ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3>Selecția Ta</h3>
+      <button class="close-cart" id="closeCartBtn">✕</button>
+    </div>
+    <div class="cart-body" id="cartItemsContainer">
+      <p class="empty-cart-msg">Nu ai selectat niciun serviciu momentan.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total Estimat</span>
+        <span id="cartTotalValue">0 RON</span>
+      </div>
+      <button class="btn-solid-gold w-100" id="confirmBookingBtn">CONFIRMĂ PE WHATSAPP</button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
